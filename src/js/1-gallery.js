@@ -89,15 +89,9 @@ const galleryMarkup = images
 
 gallery.innerHTML = galleryMarkup;
 
-gallery.addEventListener('click', event => {
-  event.preventDefault();
-
-  if (event.target.nodeName === 'IMG') {
-    const largeImageSrc = event.target.dataset.source;
-  }
-});
-
-const lightbox = new SimpleLightbox('.gallery a', {
-  captions: true,
-  captionDelay: 250,
+document.addEventListener('DOMContentLoaded', function () {
+  const gallery = new SimpleLightbox('.gallery a', {
+    captions: true,
+    captionDelay: 250,
+  });
 });
