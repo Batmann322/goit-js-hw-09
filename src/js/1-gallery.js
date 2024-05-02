@@ -63,9 +63,7 @@ const images = [
     description: 'Lighthouse Coast Sea',
   },
 ];
-
 import SimpleLightbox from 'simplelightbox';
-
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const gallery = document.querySelector('.gallery');
@@ -81,17 +79,15 @@ const galleryMarkup = images
 			alt="${description}" 
 			/>
 	</a>
-</li>
-
-  `
+</li> `
   )
   .join('');
 
 gallery.innerHTML = galleryMarkup;
 
-document.addEventListener('DOMContentLoaded', function () {
-  const gallery = new SimpleLightbox('.gallery a', {
-    captions: true,
-    captionDelay: 250,
-  });
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+  overlay: true,
+  overlayOpacity: 0.7,
 });
